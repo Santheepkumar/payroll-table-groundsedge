@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Uzair Adil",
+    "employeeId": "GLB01",
+    "totalSalary": "2500",
+    "variablePay": "0",
+    "daysOnLeave": "3",
+    "endOfService": true
+  },
+  {
+    "name": "Salim Shariff",
+    "employeeId": "GLB02",
+    "totalSalary": "1",
+    "variablePay": "9",
+    "daysOnLeave": "0",
+    "endOfService": false
+  },
+  {
+    "name": "Ambre Josse",
+    "employeeId": "GLB03",
+    "totalSalary": "0",
+    "variablePay": "8",
+    "daysOnLeave": "1",
+    "endOfService": false
+  },
+  {
+    "name": "Santheep",
+    "employeeId": "GLB07",
+    "totalSalary": "3",
+    "variablePay": "8",
+    "daysOnLeave": "10",
+    "endOfService": false
+  }
+]
