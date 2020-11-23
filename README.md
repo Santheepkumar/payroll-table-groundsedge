@@ -1,10 +1,4 @@
-### Proxy in package.json
+### To start the app
 
-### if docker
-"proxy": "isba-api",
-
-### else
-"proxy": "http://localhost:5000",
-
-
-
+1. yarn install
+2. yarn start
