@@ -8,7 +8,7 @@ import {
 } from "react-table";
 
 const CustomInput = (props) => {
-  const { initialValue, enablecurr } = props;
+  const { initialValue, enablecurr, error } = props;
   return (
     <div>
       <div className='mt-1 relative rounded-md shadow-sm '>
@@ -26,9 +26,12 @@ const CustomInput = (props) => {
           defaultValue={initialValue}
           className={`block w-32 ${
             enablecurr.view ? "pl-12" : ""
-          } sm:text-sm rounded-lg p-2 border border-gray-300 focus:outline-none`}
+          } sm:text-sm rounded-lg p-2 border border-gray-300 focus:outline-none ${
+            error ? "border-red-600" : "border-gray-300"
+          }`}
         />
       </div>
+      {error ? <div className='text-xs text-red-600'>Enter Amount</div> : null}
     </div>
   );
 };
@@ -89,7 +92,7 @@ const DISPLAY_COLUMNS = [
     ),
     accessor: "employeeId",
     headerClassName:
-      "px-6 py-6 w-2/12  bg-red-500 text-left text-md leading-4 font-medium text-white tracking-wider",
+      "px-6 py-6 w-3/12  bg-red-500 text-left text-md leading-4 font-medium text-white tracking-wider",
     headerTextClassName: "inline-flex justify-left cursor-pointer",
     cellClassName: "px-6 py-8 align-top leading-5 text-gray-700",
     Cell: ({ row }) => {
@@ -122,6 +125,7 @@ const DISPLAY_COLUMNS = [
       <CustomInput
         enablecurr={{ view: true, style: "bold" }}
         initialValue={row.original.totalSalary}
+        error={row.original.error}
       />
     ),
   },
@@ -134,7 +138,10 @@ const DISPLAY_COLUMNS = [
             d='M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
             clipRule='evenodd'></path>
         </svg>
-        <span className='mt-2 ml-2'>Variable Pay</span>
+        <span className='mt-2 ml-2'>
+          Variable Pay{" "}
+          <span className='font-light mt-1 text-sm'>(optional)</span>
+        </span>
       </div>
     ),
     accessor: "variablePay",
@@ -150,7 +157,21 @@ const DISPLAY_COLUMNS = [
     ),
   },
   {
-    Header: "Days on Leave",
+    Header: () => (
+      <div className='flex'>
+        <svg fill='currentColor' viewBox='0 0 20 20' className='-ml-6 h-8 w-8'>
+          <path
+            fillRule='evenodd'
+            d='M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z'
+            clipRule='evenodd'></path>
+        </svg>
+        <span className='mt-2 ml-2'>
+          Days on Leave{" "}
+          <span className='font-light mt-1 text-sm'>(optional)</span>
+        </span>
+      </div>
+    ),
+
     accessor: "daysOnLeave",
     headerClassName:
       "px-6 py-6 w-1/12  bg-red-500 text-left text-md leading-4 font-medium text-white tracking-wider",

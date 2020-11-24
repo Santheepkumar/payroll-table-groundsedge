@@ -11,6 +11,7 @@
     "name": "Salim Shariff",
     "employeeId": "GLB02",
     "totalSalary": "1",
+    "error": true,
     "variablePay": "9",
     "daysOnLeave": "0",
     "endOfService": false
@@ -30,5 +31,22 @@
     "variablePay": "8",
     "daysOnLeave": "10",
     "endOfService": false
+  },
+  {
+    "name": "Hitman",
+    "employeeId": "GLB08",
+    "totalSalary": "3",
+    "variablePay": "8",
+    "daysOnLeave": "10",
+    "endOfService": false
+  },
+  {
+    "name": "MSD",
+    "employeeId": "GLB09",
+    "totalSalary": "3",
+    "variablePay": "8",
+    "daysOnLeave": "10",
+    "endOfService": false,
+    "error": true
   }
 ]
