@@ -173,8 +173,8 @@ const DISPLAY_COLUMNS = [
     Cell: ({ row }) => {
       const original = row.original || {};
       return (
-        <div>
-          <span className='mr-2'>No</span>
+        <div className='flex'>
+          <span className='mr-2 mt-2'>No</span>
           <div className='relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in'>
             <input
               type='checkbox'
@@ -192,12 +192,13 @@ const DISPLAY_COLUMNS = [
                 original.endOfService ? "bg-red-500" : "bg-gray-300"
               } cursor-pointer`}></label>
           </div>
-          <span>Yes</span>
+          <span className='mt-2'>Yes</span>
         </div>
       );
     },
   },
 ];
+
 const IndeterminateCheckbox = React.forwardRef(
   ({ indeterminate, ...rest }, ref) => {
     const defaultRef = React.useRef();
