@@ -108,7 +108,7 @@ function PayrollScreen() {
         <PayrollTable tableData={tableData} />
         {/* <div className='p-20 border border-gray-500 absolute'>hello</div> */}
       </main>
-      <footer className='py-5 border border-gray-300 mx-20 rounded-lg'>
+      <footer className='py-6 border border-gray-300 mx-20 rounded-lg'>
         <div className='flex justify-between px-8'>
           <div>
             <div className='text-gray-600'>Payroll Amount</div>
